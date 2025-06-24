@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selenide.*;
 
 public class authClient {
@@ -30,7 +31,7 @@ public class authClient {
         //почта
         $("#userEmail").setValue("cerghhh@mail.com");
         //гендер
-        $(byText("Male")).click();
+        $("#genterWrapper").$(byText("Male")).click();
         //телефон
         $("#userNumber").setValue("920481598411");
         //дата рождения
@@ -56,7 +57,7 @@ public class authClient {
         $(".table-responsive").shouldHave(text("cerghhh Ryzhov"));
         $(".table-responsive").shouldHave(text("cerghhh@mail.com"));
         $(".table-responsive").shouldHave(text("Male"));
-        $(".table-responsive").shouldHave(text("9204815984"));
+        $(".table-responsive").shouldHave(text("920481598411"));
         $(".table-responsive").shouldHave(text("01 June,2025"));
         $(".table-responsive").shouldHave(text("Chemistry"));
         $(".table-responsive").shouldHave(text("Music, Sports"));
