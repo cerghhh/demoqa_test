@@ -33,7 +33,7 @@ public class authClient {
         //гендер
         $("#genterWrapper").$(byText("Male")).click();
         //телефон
-        $("#userNumber").setValue("920481598411");
+        $("#userNumber").setValue("9204815984");
         //дата рождения
         $("#dateOfBirthInput").shouldBe(Condition.visible).click();
         $$("[role='option']").filter(Condition.visible).first().click();
@@ -57,13 +57,13 @@ public class authClient {
         $(".table-responsive").shouldHave(text("cerghhh Ryzhov"));
         $(".table-responsive").shouldHave(text("cerghhh@mail.com"));
         $(".table-responsive").shouldHave(text("Male"));
-        $(".table-responsive").shouldHave(text("920481598411"));
+        $(".table-responsive").shouldHave(text("9204815984"));
         $(".table-responsive").shouldHave(text("01 June,2025"));
         $(".table-responsive").shouldHave(text("Chemistry"));
         $(".table-responsive").shouldHave(text("Music, Sports"));
         $(".table-responsive").shouldHave(text("i-_1_ (1).png"));
         $(".table-responsive").shouldHave(text("Some Street 1 "));
         $(".table-responsive").shouldHave(text("NCR Delhi"));
-        $("#closeLargeModal").click();
+        $("#id=closeLargeModal").click();
     }
 }
