@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class Authclient {
+public class authClient {
     @BeforeAll
     static void Beforeall(){
         Configuration.browserSize = "1020x1080";
@@ -36,8 +36,8 @@ public class Authclient {
         $("#dateOfBirthInput").shouldBe(Condition.visible).click();
         $$("[role='option']").filter(Condition.visible).first().click();
         //хобби
-        $("label[for=hobbies-checkbox-1]").click();
-        $("label[for=hobbies-checkbox-2]").click();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
         //фото
         $("#uploadPicture").uploadFromClasspath("i-_1_ (1).png");
         $("#currentAddress").setValue("Some Street 1 ");
