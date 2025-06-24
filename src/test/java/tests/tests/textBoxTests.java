@@ -9,11 +9,11 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTests {
+public class textBoxTests {
 
     @BeforeAll
     static void Beforeall(){
-    Configuration.browserSize = "1020x1080";
+        Configuration.browserSize = "1020x1080";
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.holdBrowserOpen = true;

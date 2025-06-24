@@ -1,4 +1,4 @@
-package tests;
+package tests.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -16,6 +16,8 @@ public class authClient {
         Configuration.browserSize = "1020x1080";
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.holdBrowserOpen = true;
+        Configuration.timeout=100000;
     }
 
 
@@ -29,14 +31,17 @@ public class authClient {
         //почта
         $("#userEmail").setValue("cerghhh@mail.com");
         //гендер
-        $("label[for=gender-radio-1]").click();
+        $(byText("Male")).click();
         //телефон
         $("#userNumber").setValue("920481598411");
         //дата рождения
         $("#dateOfBirthInput").shouldBe(Condition.visible).click();
         $$("[role='option']").filter(Condition.visible).first().click();
+
+        $("#subjectsInput").setValue("Che");
+        $$(".subjects-auto-complete__option").findBy(text("Chemistry")).click();
         //хобби
-        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#hobbiesWrapper").$(byText("Music")).click();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         //фото
         $("#uploadPicture").uploadFromClasspath("i-_1_ (1).png");
@@ -47,5 +52,18 @@ public class authClient {
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Delhi")).click();
         $("#submit").click();
+
+        //Проверка
+        $(".table-responsive").shouldHave(text("cerghhh Ryzhov"));
+        $(".table-responsive").shouldHave(text("cerghhh@mail.com"));
+        $(".table-responsive").shouldHave(text("Male"));
+        $(".table-responsive").shouldHave(text("9204815984"));
+        $(".table-responsive").shouldHave(text("01 June,2025"));
+        $(".table-responsive").shouldHave(text("Chemistry"));
+        $(".table-responsive").shouldHave(text("Music, Sports"));
+        $(".table-responsive").shouldHave(text("i-_1_ (1).png"));
+        $(".table-responsive").shouldHave(text("Some Street 1 "));
+        $(".table-responsive").shouldHave(text("NCR Delhi"));
+        $("#closeLargeModal").click();
     }
 }

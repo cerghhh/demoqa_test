@@ -3,7 +3,7 @@ package tests;
 import org.junit.jupiter.api.*;
 
 
-public class SimpleJUnitTest {
+public class simpleJUnitTest {
 int result ;
 
 
