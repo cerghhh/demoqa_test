@@ -16,7 +16,6 @@ public class authClient {
         Configuration.browserSize = "1020x1080";
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.holdBrowserOpen = true;
         Configuration.timeout=100000;
     }
 
