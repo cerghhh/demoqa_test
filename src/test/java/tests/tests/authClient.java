@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class authClient {
     @BeforeAll
-    static void Beforeall(){
+    static void beforeAll(){
         Configuration.browserSize = "1020x1080";
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
@@ -21,7 +21,7 @@ public class authClient {
 
 
     @Test
-    void FillFormTest() {
+    void fillFormTest() {
         //сайт
         open("/automation-practice-form");
         //имя и фамилия
